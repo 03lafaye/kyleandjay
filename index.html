@@ -1,0 +1,172 @@
+<!doctype html>
+
+<!--
+kyleandjay.ca
+@author Pierre-Antoine LaFayette
+-->
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+
+      html, body {
+        background-color: #000;
+        font: large/1.556 "Linux Libertine", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
+        height: 100% !important;
+        width: 100% !important;
+        word-spacing: .1em;
+      }
+
+      #container {
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+      }
+
+      #img {
+        background-image: url("http://storage.ubertor.com/kyleandjay.myubertor.com/content/image/543.jpg");
+        background-position: 50% 50%;
+        background-repeat: no-repeat no-repeat;
+        height: 100%;
+        position: relative;
+        width: 100%;
+      }
+
+      #header {
+        background-color: #000;
+        filter: alpha(opacity=85);
+        height: 20%;
+        left: 0px;
+        opacity: 0.85;
+        position: absolute;
+        text-align: center;
+        top: 0px;
+        width: 100%;
+      }
+
+      #header ul {
+        margin-top: 5%;
+      }
+
+      #header ul li {
+        font-size: 18px;
+        display: inline;
+        padding: 8px;
+      }
+
+      #header ul a {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      #header ul a:hover {
+        color: #ff0909;
+      }
+
+      #logo {
+        bottom: 13%;
+        position: absolute;
+        text-align: center;
+        width: 100%;
+        z-index: 2;
+      }
+
+      #logo img {
+        width: 20%;
+      }
+
+      #footer {
+        background-color: #000;
+        bottom: 0px;
+        filter: alpha(opacity=85);
+        height: 20%;
+        left: 0px;
+        opacity: 0.85;
+        position: absolute;
+        width: 100%;
+      }
+    </style>
+
+    <script src="https://www.google.com/jsapi?key=ABQIAAAA2WOUQMSTyiOfRLpADfScTRROkhDIvvkw2KSCwKyjIDRVSwCrSRS9enLhwUc8AC8SCFAw53owZFYivw" type="text/javascript"></script>
+
+    <script type="text/javascript" language="Javascript">
+      google.load("jquery", "1.6.4");
+
+      var SLIDESHOW_SPEED_MS = 5000;
+
+      var currentIndex = 0;
+      var images = new Array();
+
+      var startSlideshow = function() {
+        var image1 = new Image();
+        image1.src ="http://storage.ubertor.com/kyleandjay.myubertor.com/content/image/543.jpg";
+        images.push(image1);
+
+        var image2 = new Image();
+        image2.src ="http://storage.ubertor.com/kyleandjay.myubertor.com/content/image/545.jpg";
+        images.push(image2);
+
+        var image3 = new Image();
+        image3.src ="http://storage.ubertor.com/kyleandjay.myubertor.com/content/image/550.jpg";
+        images.push(image3);
+
+        var image4 = new Image();
+        image4.src ="http://storage.ubertor.com/kyleandjay.myubertor.com/content/image/544.jpg";
+        images.push(image4);
+
+        var image5 = new Image();
+        image5.src ="http://storage.ubertor.com/kyleandjay.myubertor.com/content/image/547.jpg";
+        images.push(image5);
+
+        var image6 = new Image();
+        image6.src ="http://storage.ubertor.com/kyleandjay.myubertor.com/content/image/546.jpg";
+        images.push(image6);
+
+        setInterval(nextImage, SLIDESHOW_SPEED_MS);
+      };
+
+      var nextImage = function() {
+        $("#img").animate({opacity: 0}, 1000,
+            function() {
+            $(this).css("background-image",
+              "url(" + images[++currentIndex % images.length].src + ")");
+            }).animate({opacity: 1}, 1000);
+      };
+</script>
+</head>
+
+<body>
+  <div id="container">
+    <div id="img">
+    </div>
+    <div id="header">
+      <ul>
+        <li> <a href="http://www.kyleandjay.myubertor.com/Properties.php">Properties</a> </li>
+        <li> <a href="http://www.kyleandjay.myubertor.com/ForBuyers.php">For Buyers</a> </li>
+        <li> <a href="http://www.kyleandjay.myubertor.com/ForSellers.php">For Sellers</a> </li>
+        <li> <a href="http://www.kyleandjay.myubertor.com/Blog.php">News and Updates</a> </li>
+        <li> <a href="http://www.kyleandjay.myubertor.com/KyleandJay.ubr">Kyle and Jay</a> </li>
+        <li> <a href="http://www.kyleandjay.myubertor.com/ContactUs.ubr">Contact Us</a> </li>
+      </ul>
+    </div>
+    <div id="logo">
+      <img src="http://storage.ubertor.com/kyleandjay.myubertor.com/content/image/542.jpg">
+    </div>
+    <div id="footer">
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    startSlideshow();
+  </script>
+</body>
+</html>
