@@ -54,10 +54,22 @@ kyleandjay.ca
         display: table;
       }
 
+      #header .wrapper {
+        text-align: center;
+        position: absolute;
+        width: 100%;
+        top: 50%;
+      }
+
+      #header .content {
+        top: -50%;
+      }
+
       #header ul {
         display: table-cell;
         vertical-align: middle;
         text-align: center;
+        width: 100%;
       }
 
       #header ul li {
@@ -142,14 +154,22 @@ kyleandjay.ca
       <img id="background" src="images/splash_01.jpg" />
     </div>
     <div id="header">
-      <ul>
-        <li> <a href="http://www.kyleandjay.myubertor.com/Properties.php">Properties</a> </li>
-        <li> <a href="http://www.kyleandjay.myubertor.com/ForBuyers.php">For Buyers</a> </li>
-        <li> <a href="http://www.kyleandjay.myubertor.com/ForSellers.php">For Sellers</a> </li>
-        <li> <a href="http://www.kyleandjay.myubertor.com/Blog.php">News and Updates</a> </li>
-        <li> <a href="http://www.kyleandjay.myubertor.com/KyleandJay.ubr">Kyle and Jay</a> </li>
-        <li> <a href="http://www.kyleandjay.myubertor.com/ContactUs.ubr">Contact Us</a> </li>
-      </ul>
+    <!--[if IE 7]>
+    <div class="wrapper">
+      <div class="content">
+    <![endif]-->
+        <ul>
+          <li> <a href="http://www.kyleandjay.myubertor.com/Properties.php">Properties</a> </li>
+          <li> <a href="http://www.kyleandjay.myubertor.com/ForBuyers.php">For Buyers</a> </li>
+          <li> <a href="http://www.kyleandjay.myubertor.com/ForSellers.php">For Sellers</a> </li>
+          <li> <a href="http://www.kyleandjay.myubertor.com/Blog.php">News and Updates</a> </li>
+          <li> <a href="http://www.kyleandjay.myubertor.com/KyleandJay.ubr">Kyle and Jay</a> </li>
+          <li> <a href="http://www.kyleandjay.myubertor.com/ContactUs.ubr">Contact Us</a> </li>
+        </ul>
+    <!--[if IE 7]>
+      </div>
+    </div>
+    <![endif]-->
     </div>
     <div id="footer">
     </div>
