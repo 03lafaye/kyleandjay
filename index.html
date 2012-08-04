@@ -103,8 +103,8 @@ kyleandjay.ca
         margin: 0;
         background-color: black;
         border: 1px solid red;
-        text-align: center;
-        left: 0;
+        left: 0; /* Required by firefox and ie to get proper horizontal alignment */
+        top: 100%; /* Required by ie 7 to get proper vertical alignment */
         display: none;
       }
 
