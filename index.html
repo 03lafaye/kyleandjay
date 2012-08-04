@@ -19,7 +19,6 @@ kyleandjay.ca
 
       html, body {
         background-color: #000;
-        font: large/1.556 "Linux Libertine", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
         height: 100% !important;
         width: 100% !important;
         word-spacing: .1em;
@@ -32,33 +31,38 @@ kyleandjay.ca
         width: 100%;
       }
 
-      #img {
-        background-image: url("http://storage.ubertor.com/kyleandjay.myubertor.com/content/image/543.jpg");
-        background-position: 50% 50%;
-        background-repeat: no-repeat no-repeat;
-        height: 100%;
-        position: relative;
+      #background {
+        position: absolute;
         width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+      }
+
+      .transparency {
+        background-color: #000;
+        filter: alpha(opacity=85);
+        opacity: 0.85;
       }
 
       #header {
-        background-color: #000;
-        filter: alpha(opacity=85);
-        height: 20%;
+        height: 15%;
         left: 0px;
-        opacity: 0.85;
         position: absolute;
-        text-align: center;
         top: 0px;
         width: 100%;
+        display: table;
       }
 
       #header ul {
-        margin-top: 5%;
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
       }
 
       #header ul li {
-        font-size: 18px;
+        font-family: Verdana, Arial;
+        font-size: 20px;
         display: inline;
         padding: 8px;
       }
@@ -85,12 +89,9 @@ kyleandjay.ca
       }
 
       #footer {
-        background-color: #000;
         bottom: 0px;
-        filter: alpha(opacity=85);
         height: 20%;
         left: 0px;
-        opacity: 0.85;
         position: absolute;
         width: 100%;
       }
@@ -103,42 +104,33 @@ kyleandjay.ca
 
       var SLIDESHOW_SPEED_MS = 5000;
 
-      var currentIndex = 0;
+      var currentIndex = 1;
       var images = new Array();
 
       var startSlideshow = function() {
         var image1 = new Image();
-        image1.src ="http://storage.ubertor.com/kyleandjay.myubertor.com/content/image/543.jpg";
+        image1.src ="images/splash_01.jpg";
         images.push(image1);
 
         var image2 = new Image();
-        image2.src ="http://storage.ubertor.com/kyleandjay.myubertor.com/content/image/545.jpg";
+        image2.src ="images/splash_02.jpg";
         images.push(image2);
 
         var image3 = new Image();
-        image3.src ="http://storage.ubertor.com/kyleandjay.myubertor.com/content/image/550.jpg";
+        image3.src ="images/splash_03.jpg";
         images.push(image3);
 
         var image4 = new Image();
-        image4.src ="http://storage.ubertor.com/kyleandjay.myubertor.com/content/image/544.jpg";
+        image4.src ="images/splash_04.jpg";
         images.push(image4);
-
-        var image5 = new Image();
-        image5.src ="http://storage.ubertor.com/kyleandjay.myubertor.com/content/image/547.jpg";
-        images.push(image5);
-
-        var image6 = new Image();
-        image6.src ="http://storage.ubertor.com/kyleandjay.myubertor.com/content/image/546.jpg";
-        images.push(image6);
 
         setInterval(nextImage, SLIDESHOW_SPEED_MS);
       };
 
       var nextImage = function() {
-        $("#img").animate({opacity: 0}, 1000,
+        $("#background").animate({opacity: 0}, 1000,
             function() {
-            $(this).css("background-image",
-              "url(" + images[++currentIndex % images.length].src + ")");
+            this.src = images[++currentIndex % images.length].src;
             }).animate({opacity: 1}, 1000);
       };
 </script>
@@ -147,6 +139,7 @@ kyleandjay.ca
 <body>
   <div id="container">
     <div id="img">
+      <img id="background" src="images/splash_01.jpg" />
     </div>
     <div id="header">
       <ul>
@@ -157,9 +150,6 @@ kyleandjay.ca
         <li> <a href="http://www.kyleandjay.myubertor.com/KyleandJay.ubr">Kyle and Jay</a> </li>
         <li> <a href="http://www.kyleandjay.myubertor.com/ContactUs.ubr">Contact Us</a> </li>
       </ul>
-    </div>
-    <div id="logo">
-      <img src="http://storage.ubertor.com/kyleandjay.myubertor.com/content/image/542.jpg">
     </div>
     <div id="footer">
     </div>
