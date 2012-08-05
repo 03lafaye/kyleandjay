@@ -32,11 +32,12 @@ kyleandjay.ca
       }
 
       #background {
-        position: absolute;
-        width: 100%;
+        position: relative;
+        background-image: url("images/splash_01.jpg");
+        background-position: 50% 50%;
+        background-repeat: no-repeat no-repeat;
         height: 100%;
-        top: 0;
-        left: 0;
+        width: 100%;
       }
 
       .transparency {
@@ -169,7 +170,7 @@ kyleandjay.ca
       var nextImage = function() {
         $("#background").animate({opacity: 0}, 1000,
             function() {
-            this.src = images[++currentIndex % images.length].src;
+            $(this).css("background-image", "url(" + images[++currentIndex % images.length].src + ")");
             }).animate({opacity: 1}, 1000);
       };
 </script>
@@ -177,8 +178,7 @@ kyleandjay.ca
 
 <body>
   <div id="container">
-    <div id="img">
-      <img id="background" src="images/splash_01.jpg" />
+    <div id="background">
     </div>
     <div id="header">
     <!--[if IE 7]>
